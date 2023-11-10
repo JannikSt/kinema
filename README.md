@@ -2,4 +2,5 @@
 
 Kinema is a sophisticated Kubernetes rescheduling system optimizing resource management by considering cluster state, predictive resource utilization, and cloud vendor pricing for intelligent decisions on node configuration and pod placement, achieving significant gains in cost reduction and resource utilization improvement.
 
-![](docs/kinema_demo.mp4)
+Demo: 
+[![Kinema Demo Video](img.youtube.com/vi/COywXBPQTlI/0.jpg)](https://www.youtube.com/watch?v=COywXBPQTlI)
