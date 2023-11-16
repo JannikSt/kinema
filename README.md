@@ -21,7 +21,9 @@ Once a new iteration is initiated, the utilization predictor (2) accesses the la
 ### Placement Optimizer 
 The placement optimizer (3) aims to find the most cost-efficient placement of pods on currently running and potential new virtual nodes from the available node pools. The objective of the optimizer can be configured, so setting an objective to keep the node CPU utilization below a certain threshold during daytime and optimizing for cost efficiency during nighttime is possible. Under the hood, the optimizer utilizes a Mixed Integer Program (MIP) to minimize the cost per hour for the cluster. To speed up the calculations of the MIP, the current cluster state, with its mapping of workloads to nodes, serves as starting point for the optimizer. Based on this starting point, it tries to find a better solution by adding and removing different node configurations. Once an optimization iteration is completed, it returns a list of optimized nodes and the calculated value for the objective. In the case of a cost optimization objective, the value returned would be the optimal cost per hour for running the node configuration. 
 
-\text{Minimize} \quad \sum_{i=1}^{\left|n\right|} c_i \cdot n_i + 1 \cdot 10^{-6} \cdot (Mem_i + CPU_i)
+```latex
+Minimize \sum_{i=1}^{|n|} c_i \cdot n_i + 1 \cdot 10^{-6} \cdot (Mem_i + CPU_i) 
+```
 
 
 ### Decision Processor 
