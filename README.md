@@ -30,5 +30,9 @@ The first phase of the rescheduling process is responsible for booting new nodes
 
 In a typical fashion for Kubernetes, labels are used to categorize all nodes. Labels are key-value pairs that are stored with each node’s metadata. The rescheduler generates two types of key-value pairs (8) for optimal nodes, which appear in the optimizer plan, and one for all other nodes that will eventually be removed from the cluster. The keys stay the same throughout every iteration, whereas the value is generated with each initiation of a rescheduling process.
 Once all compute resources have been patched, the rescheduler updates all deployments (9) that currently run on nodes that are not optimal for the cluster state. Here, the node affinity is updated to prefer running on nodes with an optimization label. The deployment automatically generates a new RS version (10), which starts a rolling update of pods (11). These newly created pods appear in the scheduling queue of the cluster scheduler (12). They are scheduled onto the running nodes that have an optimal label.
-Once the roll-out process runs, the cloud controller regularly queries the state of all nodes with an expiry label (13). Once the node is empty, it is removed from the cluster. Once all unnecessary nodes are removed, the cluster observer can initiate a new rescheduling iteration.
+Once the roll-out process runs, the cloud controller regularly queries the state of all nodes with an expiry label (13). Once the node is empty, it is removed from the cluster. Once all unnecessary nodes are removed, the cluster observer can initiate a new rescheduling iteration. 
+
+## Contributors 
+- Jannik Straube @jannikSt
+- Mohak Chadha @kky-fury
 
