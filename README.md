@@ -5,6 +5,8 @@ Kinema is a sophisticated Kubernetes rescheduling system optimizing resource man
 Demo: 
 [![Kinema Demo Video](img.youtube.com/vi/COywXBPQTlI/0.jpg)](https://www.youtube.com/watch?v=COywXBPQTlI) 
 
+### This repository currently holds a proof-of-concept implementation of Kinema, written in Python for rapid development. We're actively working on a production-ready version of the application, which will include comprehensive quick start guides to get you up and running smoothly. In the meantime, we appreciate your interest! Feel free to explore the current implementation and let us know what you think by starring this repository.
+
 ## Architecture 
 ![ALT TEXT](docs/architecture_overview.png)
 At the core, Kinema has access to all workload placements in the cluster by leveraging the Kubernetes API. The system itself runs as a system-critical pod within the kube system namespace.
